@@ -3,7 +3,7 @@ export const locationsData = {
     title: "ProDirt Adventure",
     active: true,
     address: "Pro Dirt Adventure, Andra Dam Rd, Rajpuri, Maharashtra 412106",
-    href: "/locations/prodirtadventure",
+    href: "https://prodirtadventure.offroadacademies.com/",
     logo: "/images/logos/prodirt-black.png",
     varient: "prodirtblack",
     bannerImage: "/images/general/collage1.jpg",
@@ -403,7 +403,7 @@ export const locationsData = {
   driftr_pune: {
     title: "TVS DRIFT-R",
     active: true,
-    href: "/locations/driftr-pune",
+    href: "https://tvs-driftr.offroadacademies.com/",
     address: "TVS driftR Adventure, Andra Dam Rd, Rajpuri, Maharashtra 412106",
     logo: "/images/logos/driftr-black.png",
     varient: "driftrblack",
