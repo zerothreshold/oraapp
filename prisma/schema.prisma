@@ -1,0 +1,27 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Location {
+  id          Int      @id @default(autoincrement())
+  metadata    Json
+  location    String
+  location_id Int      @unique
+  courses     Json
+  users       User[]   @relation("LocationUsers")
+}
+
+model User {
+  id          Int      @id @default(autoincrement())
+  user_name   String
+  user_id     Int      @unique
+  role        String
+  email       String   @unique
+  location_id Int
+  location    Location @relation(fields: [location_id], references: [id], name: "LocationUsers")
+}
