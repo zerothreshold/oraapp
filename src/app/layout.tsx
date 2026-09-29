@@ -36,7 +36,7 @@ export default function RootLayout({
           <Header />
           {/* <Notice /> */}
         </div>
-        <main className="min-h-screen lg:pt-[4rem] pt-[3.8rem]">
+        <main className="min-h-screen lg:pt-16 pt-[3.8rem]">
           {children}
         </main>
         <Toaster />

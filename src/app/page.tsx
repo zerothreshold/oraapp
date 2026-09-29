@@ -21,9 +21,9 @@ export default function Home() {
       </Head>
       <VideoPlayer />
       <WeDo />
-      <section className="section py-5 min-h-screen parallax1 w-[100vw]"></section>
+      <section className="section py-5 min-h-screen parallax1 w-screen"></section>
       <LocationComp />
-      <section className="section py-5 min-h-screen parallax w-[100vw]"></section>
+      <section className="section py-5 min-h-screen parallax w-screen"></section>
       <Testimonials />
     </main>
   );

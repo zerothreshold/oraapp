@@ -103,7 +103,7 @@ export default function LocationsInfo({
                 }
               )}
             </div>
-            <div className="w-full max-w-[26rem] mt-10">
+            <div className="w-full max-w-104 mt-10">
               <div className="rounded-md shadow border p-4 border-neutral-100 flex flex-col gap-6">
                 {course.batches.length > 0 && (
                   <BatchTimings batches={course.batches} />

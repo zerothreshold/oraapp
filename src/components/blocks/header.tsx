@@ -82,15 +82,16 @@ const Header = () => {
                 } else {
                   return (
                     <NavigationMenuItem key={item.name}>
-                      <Link href={item.href} legacyBehavior passHref>
-                        <NavigationMenuLink
-                          className={navigationMenuTriggerStyle()}
-                        >
+                      <NavigationMenuLink
+                        asChild
+                        className={navigationMenuTriggerStyle()}
+                      >
+                        <Link href={item.href}>
                           <span className="text-base font-semibold">
                             {item.name}
                           </span>
-                        </NavigationMenuLink>
-                      </Link>
+                        </Link>
+                      </NavigationMenuLink>
                     </NavigationMenuItem>
                   );
                 }

@@ -11,7 +11,7 @@ const speedshopBlack = "/images/logos/speedshop-black.png";
 const speedshopWhite = "/images/logos/speedshop-white.png";
 const powerpartBlack = "/images/logos/powerpart-black.png";
 
-interface LogoProps extends ImgHTMLAttributes<HTMLImageElement> {
+interface LogoProps extends Omit<ImgHTMLAttributes<HTMLImageElement>, "src"> {
   variant?:
     | "default"
     | "mainblack"

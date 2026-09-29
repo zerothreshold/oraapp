@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { peopleData } from "@/data/peopledata";
-import { Instagram } from "lucide-react";
+import Instagram from "@/components/common/instagram";
 import InfoLayout from "@/components/layouts/info";
 import Logo from "@/components/common/logo";
 

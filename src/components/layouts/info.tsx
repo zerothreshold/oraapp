@@ -25,7 +25,7 @@ const InfoLayout = ({
           {title}
         </h2>
         {skewed && (
-          <div className="absolute bottom-0 left-0 right-0 h-20 bg-white skew-y-[-2deg] transform-gpu z-10 -mb-10 transform-origin-top-left" />
+          <div className="absolute bottom-0 left-0 right-0 h-20 bg-white -skew-y-2 transform-gpu z-10 -mb-10 transform-origin-top-left" />
         )}
       </div>
       <main>{children}</main>
