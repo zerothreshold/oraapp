@@ -3,29 +3,16 @@ import { ArrowUpRight, MapPin } from "lucide-react";
 import PageIntro from "@/components/layouts/page-intro";
 import Instagram from "@/components/common/instagram";
 import { academyLinks } from "@/data/navdata";
+import { mapsHref, site } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "Contact | Offroad Academies",
-  description:
-    "Call or email Offroad Academies about a class, a group booking or an event.",
+  title: "Contact",
+  description: `Call ${site.phone.display} or email ${site.email} about a class, a group booking or an event.`,
 };
 
-const phone = { display: "+91 85500 11116", href: "tel:+918550011116" };
-const email = "sales@offroadacademies.com";
-const address =
-  "#64, 9th Main, 14th Cross, Indiranagar 2nd Stage, Eshwara Layout, Bangalore 560038";
-const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
-
-const instagramHandles = [
-  {
-    name: "@offroadacademies",
-    href: "https://www.instagram.com/offroadacademies/",
-  },
-  {
-    name: "@prodirt_adventure",
-    href: "https://www.instagram.com/prodirt_adventure",
-  },
-];
+const phone = { display: site.phone.display, href: `tel:${site.phone.tel}` };
+const email = site.email;
+const address = site.office.line;
 
 const linkClass =
   "rounded-sm transition-colors hover:text-signal focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-signal";
@@ -68,7 +55,7 @@ export default function Contact() {
 
           <div className="space-y-10">
             <div>
-              <h2 className="eyebrow">Office</h2>
+              <p className="eyebrow">Office</p>
               <address className="mt-3 flex gap-3 leading-relaxed not-italic">
                 <MapPin size={18} aria-hidden="true" className="mt-1 shrink-0" />
                 <span>
@@ -87,9 +74,9 @@ export default function Contact() {
             </div>
 
             <div>
-              <h2 className="eyebrow">Instagram</h2>
+              <p className="eyebrow">Instagram</p>
               <ul className="mt-3 space-y-2">
-                {instagramHandles.map((handle) => (
+                {site.socials.map((handle) => (
                   <li key={handle.name}>
                     <a
                       href={handle.href}
@@ -106,7 +93,7 @@ export default function Contact() {
             </div>
 
             <div>
-              <h2 className="eyebrow">Bookings</h2>
+              <p className="eyebrow">Bookings</p>
               <p className="mt-3 text-gravel">
                 Clinics are booked on each academy&apos;s own site.
               </p>

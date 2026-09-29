@@ -63,8 +63,9 @@ const LazyEmbed = ({ url }: { url: string }) => {
 const Testimonials = () => {
   const railRef = useRef<HTMLDivElement>(null);
   const trailRef = useRef<HTMLDivElement>(null);
-  const [atStart, setAtStart] = useState(true);
-  const [atEnd, setAtEnd] = useState(false);
+  const prevRef = useRef<HTMLButtonElement>(null);
+  const nextRef = useRef<HTMLButtonElement>(null);
+  const frameRef = useRef(0);
 
   const syncScroll = useCallback(() => {
     const rail = railRef.current;
@@ -72,14 +73,28 @@ const Testimonials = () => {
     const max = rail.scrollWidth - rail.clientWidth;
     const progress = max > 0 ? rail.scrollLeft / max : 1;
     trailRef.current?.style.setProperty("--progress", String(progress));
-    setAtStart(rail.scrollLeft < 8);
-    setAtEnd(rail.scrollLeft > max - 8);
+    if (prevRef.current) prevRef.current.disabled = rail.scrollLeft < 8;
+    if (nextRef.current) nextRef.current.disabled = max <= 0 || rail.scrollLeft > max - 8;
   }, []);
 
+  const onScroll = () => {
+    if (frameRef.current) return;
+    frameRef.current = requestAnimationFrame(() => {
+      frameRef.current = 0;
+      syncScroll();
+    });
+  };
+
   useEffect(() => {
+    const rail = railRef.current;
+    if (!rail) return;
     syncScroll();
-    window.addEventListener("resize", syncScroll);
-    return () => window.removeEventListener("resize", syncScroll);
+    const observer = new ResizeObserver(syncScroll);
+    observer.observe(rail);
+    return () => {
+      observer.disconnect();
+      if (frameRef.current) cancelAnimationFrame(frameRef.current);
+    };
   }, [syncScroll]);
 
   const scrollByCard = (direction: 1 | -1) => {
@@ -145,18 +160,19 @@ const Testimonials = () => {
         </div>
         <div className="flex gap-3">
           <button
+            ref={prevRef}
             type="button"
             aria-label="Previous video"
-            disabled={atStart}
+            disabled
             onClick={() => scrollByCard(-1)}
             className={controlClass}
           >
             <ArrowLeft size={18} />
           </button>
           <button
+            ref={nextRef}
             type="button"
             aria-label="Next video"
-            disabled={atEnd}
             onClick={() => scrollByCard(1)}
             className={controlClass}
           >
@@ -167,7 +183,7 @@ const Testimonials = () => {
 
       <div
         ref={railRef}
-        onScroll={syncScroll}
+        onScroll={onScroll}
         role="region"
         aria-label="Rider testimonial videos"
         tabIndex={0}

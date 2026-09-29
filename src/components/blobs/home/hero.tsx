@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { preload } from "react-dom";
 import { ArrowRight } from "lucide-react";
 import HeroVideo from "@/components/blocks/home/videoplayer";
 
@@ -9,9 +10,35 @@ const facts = [
 ];
 
 const Hero = () => {
+  preload("/videos/hero-poster-wide.jpg", {
+    as: "image",
+    fetchPriority: "high",
+    media: "(min-width: 768px)",
+  });
+  preload("/videos/hero-poster-mobile.jpg", {
+    as: "image",
+    fetchPriority: "high",
+    media: "(max-width: 767px)",
+  });
+
   return (
     <section aria-labelledby="hero-heading" className="bg-white text-ink">
-      <div className="relative aspect-[4/3] max-h-[calc(100svh-4rem)] w-full overflow-hidden sm:aspect-[16/9] lg:aspect-[20/9]">
+      <div className="relative aspect-[4/3] max-h-[calc(100svh-4rem)] w-full overflow-hidden bg-ink sm:aspect-[16/9] lg:aspect-[20/9]">
+        <picture>
+          <source
+            media="(min-width: 768px)"
+            srcSet="/videos/hero-poster-wide.jpg"
+          />
+          <img
+            src="/videos/hero-poster-mobile.jpg"
+            alt=""
+            width={960}
+            height={720}
+            fetchPriority="high"
+            decoding="async"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+        </picture>
         <HeroVideo />
         <div
           aria-hidden="true"

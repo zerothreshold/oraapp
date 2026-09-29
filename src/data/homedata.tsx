@@ -3,31 +3,31 @@ export const whatWeDo = [
     title: "Learn the Fundamentals",
     img: "/images/general/learnfund.jpg",
     description:
-      "In every class, we begin by introducing you to the basics of off-road riding. From how you engage with the foot peg to positioning your head, we'll break down key techniques into easy steps. These steps will naturally apply as you get on the bike, setting you up for success.",
+      "Each clinic starts with the basics: footpeg pressure, where your head goes, and how you stand on the bike. The drills are short, so you can use them as soon as you roll onto the dirt.",
   },
   {
     title: "Riding techniques explained",
     img: "/images/general/ridingtech.jpg",
     description:
-      "Our trainers will guide you through essential riding skills to enhance your abilities. These techniques will be presented clearly for easy comprehension, enabling you to swiftly apply them and witness progress in your riding. The techniques covered may include cornering, jumping, braking, line selection, body posture, and shifting. Feel free to inquire about riding techniques or bike setup during the training.",
+      "Trainers walk through cornering, braking, line choice, body position and shifting, one skill at a time. Ask about technique or bike setup while you are out on the loop.",
   },
   {
     title: "Build Confidence",
     img: "/images/general/buildconfidence.jpg",
     description:
-      "New adventure (ADV) riders often have experience with street riding, so tackling off-road terrain might seem daunting initially. Our training area features distinct trails designed to gradually boost your confidence. We start by reinforcing the core basics covered at the start of your training. As you progress, we guide you in applying these skills across various terrains.",
+      "Most adventure riders already know the road. The training area steps from easy trails to rougher ones, so the same basics get used on ground that asks more of them.",
   },
   {
     title: "Effective Training for Riders",
     img: "/images/general/exp.jpg",
     description:
-      "Our comprehensive training program is tailored to elevate riders of every proficiency, enhancing their skills, and prioritizing safety. Regardless of whether you're a seasoned racer aiming for better results, an enthusiast enhancing your weekend rides, or a beginner taking your first biking steps, our program caters to all. Boasting over a decade of instructing riders, our skilled trainers will guide you toward accomplishing your objectives.",
+      "The same programme covers a first day on dirt, a weekend rider who wants cleaner lines, and a racer working on results. The trainers have been coaching for more than ten years.",
   },
   {
     title: "Individual Feedback",
     img: "/images/general/individualfeed.jpg",
     description:
-      "Whether you're in a group class or opt for private ADV training, our instructors will provide personalized feedback. Once you grasp the basic off-road riding posture, we'll concentrate on mastering traction, throttle, and clutch control, along with braking on unstable surfaces like dirt and gravel.",
+      "In a group clinic or a private session, you get notes on your own riding. After the basic stance, the work moves to traction, throttle, clutch and braking on dirt and gravel.",
   },
 ];
 
@@ -39,9 +39,15 @@ export const homeLocations = [
     img: "/images/general/trials.jpeg",
     imgAlt: "Adventure bike jumping a log at ProDirt Adventure",
     href: "https://prodirtadventure.offroadacademies.com/",
-    address: "Pro Dirt Adventure, Andra Dam Rd, Rajpuri, Maharashtra 412106",
+    address: {
+      line: "Pro Dirt Adventure, Andra Dam Rd, Rajpuri, Maharashtra 412106",
+      streetAddress: "Andra Dam Rd",
+      addressLocality: "Rajpuri",
+      addressRegion: "Maharashtra",
+      postalCode: "412106",
+    },
     description:
-      "ProDirt Adventure isn't just a riding destination; it's your launchpad for off-road mastery. We are passionate about empowering riders across Maharashtra with the skills and confidence to conquer any terrain. Our commitment to off-road education shines through our diverse training programs for both two-wheelers and four-wheelers.",
+      "Adventure and off-road clinics for motorcycles and 4x4s, on tracks built for training. Book the class on the ProDirt site.",
   },
   {
     name: "TVS Drift-R School",
@@ -50,9 +56,15 @@ export const homeLocations = [
     img: "/images/general/driftrbanner.jpg",
     imgAlt: "Rider leaning through a flat track corner at golden hour",
     href: "https://tvs-driftr.offroadacademies.com/",
-    address: "TVS driftR Adventure, Andra Dam Rd, Rajpuri, Maharashtra 412106",
+    address: {
+      line: "TVS driftR Adventure, Andra Dam Rd, Rajpuri, Maharashtra 412106",
+      streetAddress: "Andra Dam Rd",
+      addressLocality: "Rajpuri",
+      addressRegion: "Maharashtra",
+      postalCode: "412106",
+    },
     description:
-      "Flat Tracking, is a fun, emerging, and accessible form of motorcycling that is among the fastest-growing motorsports in the world. TVS Motor Company is launching the first Drift R School at ProDirt Adventure, Pune This school aims to introduce/help/assist in understanding the nuances of this sport by creating a platform where all our TVS Ronin and other customers get to interact and learn drifting under the guidance of highly skilled trainers in a safe and controlled environment.",
+      "Flat track coaching at the same Rajpuri site, run with TVS. Learn to slide on dirt, including on the TVS Ronin, with a trainer on the oval.",
   },
 ];
 

@@ -6,11 +6,13 @@ import Logo from "@/components/common/logo";
 import Instagram from "@/components/common/instagram";
 import { peopleData } from "@/data/peopledata";
 import { academyLinks } from "@/data/navdata";
+import JsonLd from "@/components/site/json-ld";
+import { peopleGraph } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "Our story | Offroad Academies",
+  title: "Our story",
   description:
-    "Who runs Offroad Academies, how the training centres work, and the trainers who coach at ProDirt Adventure and the TVS Drift-R School.",
+    "Who runs Offroad Academies, and the trainers who coach at ProDirt Adventure and the TVS Drift-R School outside Pune.",
 };
 
 const facilities = [
@@ -27,6 +29,7 @@ const linkClass =
 export default function AboutUs() {
   return (
     <>
+      <JsonLd data={peopleGraph} />
       <PageIntro
         title="Our story"
         lede="Structured off-road training, built by racers and adopted by the motorcycle brands they ride for."

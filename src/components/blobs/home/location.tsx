@@ -65,7 +65,7 @@ const LocationComp = () => {
               <div className="mt-6 flex items-end justify-between gap-4 border-t border-ink/10 pt-5 text-sm">
                 <span className="flex items-start gap-2 text-gravel">
                   <MapPin size={16} aria-hidden="true" className="mt-0.5 shrink-0" />
-                  {academy.address}
+                  {academy.address.line}
                 </span>
                 <span className="inline-flex shrink-0 items-center gap-1 font-semibold transition-colors group-hover:text-signal">
                   Visit site

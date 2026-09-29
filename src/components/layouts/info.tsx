@@ -19,7 +19,7 @@ const InfoLayout = ({
   return (
     <div className="text-ink">
       <PageIntro title={title} image={defaultImage} />
-      <main>{children}</main>
+      {children}
     </div>
   );
 };

@@ -6,9 +6,9 @@ import Filmstrip from "@/components/blobs/home/filmstrip";
 import Instagram from "@/components/common/instagram";
 
 export const metadata: Metadata = {
-  title: "Events | Offroad Academies",
+  title: "Events",
   description:
-    "Group rides, camps and brand days from Offroad Academies, announced as they are confirmed.",
+    "Group rides, camps and brand days from Offroad Academies near Pune, announced as each one is confirmed.",
 };
 
 export default function Events() {

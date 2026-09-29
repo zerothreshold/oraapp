@@ -26,6 +26,7 @@
 
   --font-sans: var(--font-barlow), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-barlow-condensed), "Arial Narrow", sans-serif;
+  --font-display-italic: var(--font-barlow-condensed-italic), "Arial Narrow", sans-serif;
 
   --color-ink: #0d0c0b;
   --color-bone: #f2eee8;
@@ -156,6 +157,26 @@
   }
 }
 
+/* Native dialog. The UA stylesheet centres it and caps its height, which
+   fights a full-height drawer, so the reset lives here rather than in utilities. */
+.mobile-nav {
+  margin: 0 0 0 auto;
+  height: 100%;
+  max-height: none;
+  width: min(100%, 24rem);
+  border: 0;
+  padding: 0 1.25rem 1.5rem;
+  background: white;
+  color: var(--color-ink);
+}
+.mobile-nav[open] {
+  display: flex;
+  flex-direction: column;
+}
+.mobile-nav::backdrop {
+  background: rgb(13 12 11 / 0.4);
+}
+
 @layer components {
   /* Page column and the three display sizes every page shares. */
   .wrap {
@@ -163,6 +184,10 @@
   }
   .display-2 {
     @apply font-display text-5xl leading-[0.9] font-extrabold tracking-tight text-balance uppercase italic sm:text-6xl lg:text-7xl;
+    font-family: var(--font-display-italic);
+  }
+  .font-display.italic {
+    font-family: var(--font-display-italic);
   }
   .display-3 {
     @apply font-display text-3xl leading-none font-bold tracking-tight uppercase sm:text-4xl;

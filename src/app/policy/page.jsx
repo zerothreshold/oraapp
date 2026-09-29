@@ -1,13 +1,19 @@
 import InfoLayout from "@/components/layouts/info";
 
+export const metadata = {
+  title: "Shipping and returns",
+  description:
+    "Shipping times and the return policy for orders placed with Offroad Academies.",
+};
+
 const imageStr = "/images/assets/banner2.jpg";
 
 export default function Policy() {
   return (
-    <InfoLayout imageStr={imageStr} title="Policy">
+    <InfoLayout imageStr={imageStr} title="Shipping">
       <div className="bg-whtie dark:bg-gray-800 py-10">
         <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
-          <h1 className="text-3xl font-bold mb-4">Shipping & Return Policy</h1>
+          <p className="text-3xl font-bold mb-4">Shipping & Return Policy</p>
           <div>
             <h2 className="text-2xl font-bold mt-8 mb-4">Shipping Policy</h2>
             <ul className="list-disc pl-8 mb-4">

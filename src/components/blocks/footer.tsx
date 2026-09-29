@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import Logo from "../common/logo";
 import Instagram from "../common/instagram";
+import { mapsHref, site } from "@/data/site";
 
 const explore = [
   { name: "Home", href: "/" },
@@ -26,21 +27,6 @@ const legal = [
   { name: "Terms and Conditions", href: "/terms" },
   { name: "Other Policies", href: "/policy" },
 ];
-
-const instagramHandles = [
-  {
-    name: "@offroadacademies",
-    href: "https://www.instagram.com/offroadacademies/",
-  },
-  {
-    name: "@prodirt_adventure",
-    href: "https://www.instagram.com/prodirt_adventure",
-  },
-];
-
-const address =
-  "#64, 9th Main, 14th Cross, Indiranagar 2nd Stage, Eshwara layout, Bangalore - 560038";
-const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
 
 const linkClass =
   "rounded-sm transition-colors hover:text-signal focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-signal";
@@ -110,18 +96,18 @@ const Footer = () => {
                 <ArrowUpRight size={16} aria-hidden="true" />
               </Link>
               <a
-                href="tel:+918550011116"
+                href={`tel:${site.phone.tel}`}
                 className={`${linkClass} inline-flex items-center gap-2 font-semibold`}
               >
                 <Phone size={16} aria-hidden="true" />
-                +91-8550011116
+                {site.phone.display}
               </a>
               <a
-                href="mailto:sales@offroadacademies.com"
+                href={`mailto:${site.email}`}
                 className={`${linkClass} inline-flex items-center gap-2 font-semibold`}
               >
                 <Mail size={16} aria-hidden="true" />
-                sales@offroadacademies.com
+                {site.email}
               </a>
             </div>
           </div>
@@ -134,7 +120,12 @@ const Footer = () => {
 
         <div className="mt-14 grid gap-10 border-t border-white/15 pt-10 sm:mt-20 lg:grid-cols-[1.3fr_1fr] lg:gap-20">
           <div className="max-w-md">
-            <Logo variant="mainwhite" width={200} height={50} />
+            <Logo
+              variant="mainwhite"
+              width={200}
+              height={50}
+              alt="Offroad Academies"
+            />
             <p className="mt-6 leading-relaxed text-dust">
               Off-road training for 2-wheelers and 4-wheelers. Over 10,000
               riders trained across India, with brands like Hero, Royal
@@ -155,11 +146,11 @@ const Footer = () => {
                 rel="noreferrer"
                 className={`${linkClass} leading-relaxed`}
               >
-                {address}.
+                {site.office.line}.
               </a>
             </address>
             <ul className="flex flex-wrap gap-x-6 gap-y-3">
-              {instagramHandles.map((handle) => (
+              {site.socials.map((handle) => (
                 <li key={handle.name}>
                   <a
                     href={handle.href}

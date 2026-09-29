@@ -1,13 +1,20 @@
+import type { Metadata } from "next";
 import InfoLayout from "@/components/layouts/info";
+
+export const metadata: Metadata = {
+  title: "Terms and conditions",
+  description:
+    "The terms that govern use of offroadacademies.com and bookings made with Offroad Academies.",
+};
 
 const imageStr = "/images/assets/banner2.jpg";
 
 export default function Terms() {
   return (
-    <InfoLayout imageStr={imageStr} title="Policy">
+    <InfoLayout imageStr={imageStr} title="Terms">
       <div className="bg-whtie dark:bg-gray-800 py-10">
         <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
-          <h1 className="text-3xl font-bold mb-4">Terms And Conditions</h1>
+          <p className="text-3xl font-bold mb-4">Terms And Conditions</p>
           <div>
             <p>This terms are effective from November 6th, 2024</p>
             <h2 className="text-2xl font-bold mt-8 mb-4">Terms of use</h2>

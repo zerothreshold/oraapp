@@ -1,76 +1,45 @@
-"use client";
 import Image from "next/image";
-import React, { ImgHTMLAttributes } from "react";
+import type { ImgHTMLAttributes } from "react";
 
-const mainBlack = "/images/logos/main-black.png";
-const mainWhite = "/images/logos/main-white.png";
-const driftrBlack = "/images/logos/driftr-black.png";
-const mototripBlack = "/images/logos/mototrip-black.png";
-const prodirtBlack = "/images/logos/prodirt-black.png";
-const speedshopBlack = "/images/logos/speedshop-black.png";
-const speedshopWhite = "/images/logos/speedshop-white.png";
-const powerpartBlack = "/images/logos/powerpart-black.png";
+const sources = {
+  default: "/images/logos/main-black.png",
+  mainblack: "/images/logos/main-black.png",
+  mainwhite: "/images/logos/main-white.png",
+  driftrblack: "/images/logos/driftr-black.png",
+  mototripblack: "/images/logos/mototrip-black.png",
+  prodirtblack: "/images/logos/prodirt-black.png",
+  speedshopblack: "/images/logos/speedshop-black.png",
+  speedshopwhite: "/images/logos/speedshop-white.png",
+  powerpartblack: "/images/logos/powerpart-black.png",
+} as const;
+
+type Variant = keyof typeof sources;
 
 interface LogoProps extends Omit<ImgHTMLAttributes<HTMLImageElement>, "src"> {
-  variant?:
-    | "default"
-    | "mainblack"
-    | "mainwhite"
-    | "driftrblack"
-    | "mototripblack"
-    | "prodirtblack"
-    | "speedshopblack"
-    | "speedshopwhite"
-    | "powerpartblack";
-  passString?: string;
+  variant?: Variant;
   width: number;
   height: number;
   className?: string;
+  alt?: string;
+  priority?: boolean;
 }
 
-const Logo: React.FC<LogoProps> = ({
+const Logo = ({
   variant = "default",
   width,
   height,
-  passString = "",
   className = "",
-  ...props
-}) => {
-  const getVariantImage = () => {
-    const finalVariant = passString || variant;
-    switch (finalVariant) {
-      case "mainblack":
-        return mainBlack;
-      case "mainwhite":
-        return mainWhite;
-      case "driftrblack":
-        return driftrBlack;
-      case "mototripblack":
-        return mototripBlack;
-      case "prodirtblack":
-        return prodirtBlack;
-      case "speedshopblack":
-        return speedshopBlack;
-      case "speedshopwhite":
-        return speedshopWhite;
-      case "powerpartblack":
-        return powerpartBlack;
-      default:
-        return mainBlack;
-    }
-  };
-
-  return (
-    <Image
-      src={getVariantImage()}
-      alt="Logo"
-      width={width}
-      height={height}
-      className={`object-contain object-center ${className}`}
-      priority
-      {...props}
-    />
-  );
-};
+  alt = "",
+  priority = false,
+}: LogoProps) => (
+  <Image
+    src={sources[variant]}
+    alt={alt}
+    width={width}
+    height={height}
+    priority={priority}
+    className={`object-contain object-center ${className}`}
+  />
+);
 
 export default Logo;

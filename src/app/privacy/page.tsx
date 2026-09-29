@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import InfoLayout from "@/components/layouts/info";
+
+export const metadata: Metadata = {
+  title: "Privacy policy",
+  description:
+    "How Offroad Academies collects, uses and shares information when you visit offroadacademies.com.",
+};
 
 const imageStr = "/images/assets/banner2.jpg";
 
@@ -7,7 +14,7 @@ export default function Privacy() {
     <InfoLayout imageStr={imageStr} title="Privacy Policy">
       <div className="bg-whtie dark:bg-gray-800 py-10">
         <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
-          <h1 className="text-3xl font-bold mb-4">Privacy Policy</h1>
+          <p className="text-3xl font-bold mb-4">Privacy Policy</p>
           <div>
             <p className="mb-4">
               <strong>Last updated:</strong> May 04, 2024

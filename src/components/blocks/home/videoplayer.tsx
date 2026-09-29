@@ -3,8 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 
 // Three encodes of the same cut: a 4:3 centre crop for phones, 1280x576 for
-// laptops and tablets, and 1920x864 for 1080p and 2K desktops. The poster is a
-// plain image so the page has something to paint before any video bytes arrive.
+// laptops and tablets, and 1920x864 for 1080p and 2K desktops. The poster is
+// painted by the server component underneath, so this element stays empty
+// until a source is chosen.
 type Variant = "mobile" | "1280" | "1920";
 
 const pickVariant = (): Variant => {
@@ -18,9 +19,8 @@ const HeroVideo = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
 
-  // The video element renders without a source, so nothing downloads until
-  // this effect has looked at the screen, the motion preference and the
-  // data-saver flag.
+  // Nothing downloads until this effect has looked at the screen, the motion
+  // preference and the data-saver flag.
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
@@ -42,33 +42,18 @@ const HeroVideo = () => {
   }, []);
 
   return (
-    <div className="absolute inset-0 bg-ink">
-      <picture>
-        <source
-          media="(min-width: 768px)"
-          srcSet="/videos/hero-poster-wide.jpg"
-        />
-        <img
-          src="/videos/hero-poster-mobile.jpg"
-          alt=""
-          fetchPriority="high"
-          decoding="async"
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-      </picture>
-      <video
-        ref={videoRef}
-        muted
-        loop
-        playsInline
-        preload="none"
-        aria-hidden="true"
-        onPlaying={() => setPlaying(true)}
-        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
-          playing ? "opacity-100" : "opacity-0"
-        }`}
-      />
-    </div>
+    <video
+      ref={videoRef}
+      muted
+      loop
+      playsInline
+      preload="none"
+      aria-hidden="true"
+      onPlaying={() => setPlaying(true)}
+      className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
+        playing ? "opacity-100" : "opacity-0"
+      }`}
+    />
   );
 };
 
