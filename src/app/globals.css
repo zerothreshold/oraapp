@@ -198,6 +198,33 @@
   .eyebrow {
     @apply text-xs font-semibold tracking-[0.18em] text-gravel uppercase;
   }
+  /* Body text of the legal pages. The page files keep plain p, ul and ol
+     elements and this class styles them. Lists with letters or roman numerals
+     typed into the text carry .lettered so no bullet doubles up with them. */
+  .legal-prose {
+    @apply text-[1.0625rem] leading-relaxed text-ink/85;
+  }
+  .legal-prose > * + * {
+    @apply mt-4;
+  }
+  .legal-prose ul {
+    @apply list-disc space-y-3 pl-6 marker:text-signal;
+  }
+  .legal-prose ol {
+    @apply list-decimal space-y-3 pl-6 marker:font-semibold marker:text-gravel;
+  }
+  .legal-prose ul.lettered {
+    @apply list-none pl-0;
+  }
+  .legal-prose ul.lettered ul.lettered {
+    @apply mt-3 border-l border-ink/15 pl-5;
+  }
+  .legal-prose strong {
+    @apply font-semibold text-ink;
+  }
+  .legal-prose a {
+    @apply rounded-sm font-medium text-ink underline decoration-ink/30 underline-offset-4 transition-colors hover:text-signal hover:decoration-signal focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-signal;
+  }
   .btn {
     @apply inline-flex h-12 items-center justify-center gap-2 rounded-full px-6 text-sm font-semibold whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-signal;
   }
