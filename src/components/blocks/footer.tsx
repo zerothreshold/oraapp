@@ -95,7 +95,7 @@ const Footer = () => {
 
         <div className="mt-12 grid gap-12 sm:mt-16 lg:grid-cols-[1.3fr_1fr] lg:gap-20">
           <div>
-            <h2 className="text-4xl leading-[0.95] font-bold tracking-tight text-balance sm:text-5xl lg:text-6xl">
+            <h2 className="display-2">
               Come ride with us.
             </h2>
             <p className="mt-5 max-w-md text-base leading-relaxed text-dust sm:text-lg">

@@ -3,60 +3,53 @@ import Image from "next/image";
 
 const WeDo = () => {
   return (
-    <div className="container flex flex-col gap-16 my-20">
-      <div className="text-center w-full lg:text-5xl text-4xl font-bold">
-        <span className="border-b-2">What we do</span>
-      </div>
-      <div className="flex flex-col gap-16">
-        {whatWeDo.map((item, index) => {
-          const isEven = index % 2 === 0;
-          return (
-            <div key={index} className="flex flex-col gap-20">
-              {index !== 0 && (
-                <div className="w-full flex justify-center">
-                  <Image
-                    src="/images/assets/hills.png"
-                    alt="hills"
-                    className="fadeInUp-animation"
-                    width={120}
-                    height={120}
-                  />
-                </div>
-              )}
-              <div
-                key={index}
-                className="grid gird-cols-1 lg:grid-cols-2 gap-20"
-              >
-                {isEven && (
-                  <Image
-                    src={item.img}
-                    alt={item.title}
-                    width={1000}
-                    height={1000}
-                    className="rounded-md"
-                  />
-                )}
+    <section
+      aria-labelledby="train-heading"
+      className="mx-auto max-w-[1400px] px-5 py-16 text-ink sm:px-8 lg:py-24"
+    >
+      <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] lg:gap-16">
+        <div className="lg:sticky lg:top-24 lg:self-start">
+          <h2
+            id="train-heading"
+            className="display-2"
+          >
+            How we train
+          </h2>
+          <p className="mt-5 lede">
+            Every clinic follows the same shape, whether it is your first time
+            standing on the pegs or you are chasing lap times. This is what a
+            day with us covers.
+          </p>
+        </div>
 
-                <div className="flex flex-col justify-center gap-7">
-                  <h2 className="text-4xl lg:text-5xl font-bold">
-                    {item.title}
-                  </h2>
-                  <p>{item.description}</p>
-                </div>
-                {!isEven && (
-                  <Image
-                    src={item.img}
-                    alt={item.title}
-                    width={1000}
-                    height={1000}
-                  />
-                )}
+        <ul className="mt-10 divide-y divide-ink/10 lg:mt-0">
+          {whatWeDo.map((item) => (
+            <li
+              key={item.title}
+              className="grid gap-5 py-8 first:pt-0 last:pb-0 md:grid-cols-[minmax(0,260px)_minmax(0,1fr)] md:gap-8 lg:py-10"
+            >
+              <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-bone">
+                <Image
+                  src={item.img}
+                  alt=""
+                  fill
+                  sizes="(min-width: 768px) 260px, 100vw"
+                  className="object-cover"
+                />
               </div>
-            </div>
-          );
-        })}
+              <div>
+                <h3 className="display-3">
+                  {item.title}
+                </h3>
+                <p className="mt-4 leading-relaxed text-gravel">
+                  {item.description}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
-    </div>
+    </section>
   );
 };
 

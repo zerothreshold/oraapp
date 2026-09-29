@@ -12,7 +12,7 @@ export const peopleData = [
     name: "Aishwarya Pissay",
     position: "Founder & Head Trainer",
     location: "Off-Road Academies",
-    description: `Aishwarya Pissay, the co-founder, and a trailblazing Indian motorsports athlete. As the first Indian to win a World Title, she's a seasoned circuit and off-road motorcycle racer, boasting multiple National titles in Road Racing and Rally Championships. Over the past six years, Aishwarya has passionately shared her expertise through training at TVS Road Racing Camps, guiding AOG Ladakh Tour participants, and empowering women at the Women Offroad TVS Training Camp. Her achievements and dedication underscore her prominent role in motorsports and training. (Add Instagram Icons  with Direct Links to their individual Insta pages )`,
+    description: `Aishwarya Pissay, the co-founder, and a trailblazing Indian motorsports athlete. As the first Indian to win a World Title, she's a seasoned circuit and off-road motorcycle racer, boasting multiple National titles in Road Racing and Rally Championships. Over the past six years, Aishwarya has passionately shared her expertise through training at TVS Road Racing Camps, guiding AOG Ladakh Tour participants, and empowering women at the Women Offroad TVS Training Camp. Her achievements and dedication underscore her prominent role in motorsports and training.`,
     instalink: "https://www.instagram.com/miss.pissay/",
   },
   {

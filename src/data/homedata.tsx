@@ -35,18 +35,54 @@ export const whatWeDo = [
 
 export const homeLocations = [
   {
-    name: locationsData.prodirtadventure.title,
+    name: "ProDirt Adventure",
+    discipline: "Adventure off-road",
+    logo: "prodirtblack" as const,
+    img: "/images/general/trials.jpeg",
+    imgAlt: "Adventure bike jumping a log at ProDirt Adventure",
     href: locationsData.prodirtadventure.href,
+    address: locationsData.prodirtadventure.address,
     description: locationsData.prodirtadventure.description,
   },
   {
-    name: locationsData.driftr_pune.title,
+    name: "TVS Drift-R School",
+    discipline: "Flat track",
+    logo: "driftrblack" as const,
+    img: "/images/general/driftrbanner.jpg",
+    imgAlt: "Rider leaning through a flat track corner at golden hour",
     href: locationsData.driftr_pune.href,
+    address: locationsData.driftr_pune.address,
     description: locationsData.driftr_pune.description,
   },
-  // {
-  //   name: locationsData.mototrip_goa.title,
-  //   href: locationsData.mototrip_goa.href,
-  //   description: locationsData.mototrip_goa.description,
-  // },
+];
+
+export const academyPhotos = [
+  {
+    src: "/images/general/flattrack1.jpg",
+    alt: "Rider sliding the rear wheel on the dirt oval",
+  },
+  {
+    src: "/images/general/offroad.jpeg",
+    alt: "Two riders kicking up dust on a trail beside the reservoir",
+  },
+  {
+    src: "/images/general/learning.jpeg",
+    alt: "Rider standing on the pegs over a wooden obstacle",
+  },
+  {
+    src: "/images/general/driftskid.jpg",
+    alt: "Flat tracker sliding past the paddock",
+  },
+  {
+    src: "/images/general/exp.jpg",
+    alt: "Riders threading a cone course",
+  },
+  {
+    src: "/images/general/flattrack2.jpg",
+    alt: "Two riders side by side on the flat track",
+  },
+  {
+    src: "/images/general/para1.jpg",
+    alt: "A row of BMW GS bikes lined up before a clinic",
+  },
 ];

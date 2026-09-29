@@ -1,182 +1,186 @@
+import type { Metadata } from "next";
 import Image from "next/image";
-import { peopleData } from "@/data/peopledata";
-import Instagram from "@/components/common/instagram";
-import InfoLayout from "@/components/layouts/info";
+import { ArrowUpRight } from "lucide-react";
+import PageIntro from "@/components/layouts/page-intro";
 import Logo from "@/components/common/logo";
+import Instagram from "@/components/common/instagram";
+import { peopleData } from "@/data/peopledata";
+import { academyLinks } from "@/data/navdata";
 
-interface TeamMemberProps {
-  image: string;
-  name: string;
-  position: string;
-  location: string;
-  description: string;
-  instalink: string;
-}
+export const metadata: Metadata = {
+  title: "Our story | Offroad Academies",
+  description:
+    "Who runs Offroad Academies, how the training centres work, and the trainers who coach at ProDirt Adventure and the TVS Drift-R School.",
+};
 
-const imageStr = "/images/assets/banner2.jpg";
+const facilities = [
+  "Tracks built for adventure, motocross, 4x4 and flat track riding",
+  "Flat track training systems, ready to ride",
+  "Bike maintenance and secure storage on site",
+  "Food and drink on site",
+  "Camping, dorms and bio toilets",
+];
+
+const linkClass =
+  "rounded-sm transition-colors hover:text-signal focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-signal";
 
 export default function AboutUs() {
   return (
-    <InfoLayout imageStr={imageStr} title="Our Story">
-      <div className="my-28">
-        <div className="row container">
-          <div className="col-md-12 col-12 font-medium">
-            <h1 className="lg:text-6xl text-5xl font-extrabold mb-5 uppercase">
-              offroad academies
-            </h1>
-            <p className="mb-4">
-              At <strong>OFFROAD ACADEMIES</strong> and our Training Centers,
-              our primary emphasis is on delivering top-tier off-road riding
-              training and experiences. With a dedication to riders of all
-              proficiency levels, our centers not only champion secure and
-              self-assured off-road riding but also play a pivotal role in
-              fostering the expansion of the adventure riding community.
-              Additionally, we enhance the overall connection between the
-              Automotive Brand and its valued customers.
-            </p>
-            <p className="mb-4">
-              OFFROAD ACADEMIES is dedicated to cultivating the skills and
-              passion of motorcycle enthusiasts seeking thrilling off-road
-              experiences. Our training centers operate on a distinctive model,
-              tailored to deliver specialized training and unforgettable
-              adventures in the realm of off-road riding.
-            </p>
-            <span className="text-xl">
-              <strong className="block mb-4">Our Mission:</strong>
-            </span>
-            <p>
-              Our core mission is to empower riders with the expertise,
-              techniques, and self-assurance needed to conquer demanding
-              off-road terrains. We aim to foster a community of capable riders
-              who can confidently navigate diverse landscapes on their
-              motorcycles.
-            </p>
-          </div>
-        </div>
-        <div className="team-section bg-gray-100 text-center md:py-16 -skew-y-3 -rotate-4 mt-20">
-          <div className="skew-y-3 rotate-4 container flex flex-col">
-            <div className="pt-20">
-              <div className="text-6xl font-extrabold mb-5 capitalize md:text-5xl md:mb-4">
-                KEY PEOPLE
-              </div>
-              <p>
-                A Passionate Team when it comes to having fun riding offroad
-                motorcycles. Whether you are looking for adventure travel or
-                training clinics to improve your riding skills, Our trainers and
-                team members are well prepared for you
-              </p>
-            </div>
-
-            <div className="mx-auto py-6 grid lg:grid-cols-2 grid-cols-1 gap-20">
-              {peopleData.map((member, index) => (
-                <div
-                  key={index}
-                  className="col-span-1 flex flex-col bg-white border-2 p-4 rounded-lg shadow-lg"
-                >
-                  <TeamMember
-                    image={member.image}
-                    name={member.name}
-                    position={member.position}
-                    location={member.location}
-                    description={member.description}
-                    instalink={member.instalink}
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-        <div className="py-24 bg-white">
-          <div className="container row">
-            <div className="col-md-12 col-12 bg-gray-100 p-8 rounded-lg">
-              <h2 className="text-2xl font-semibold mb-4">OUR ACADEMIES</h2>
-              <ul className="flex flex-wrap gap-8">
-                <li className="flex flex-col items-center">
-                  <Logo variant="prodirtblack" width={100} height={100} />
-                  <div className="text-center">Pune</div>
-                </li>
-                <li className="flex flex-col items-center">
-                  <Logo variant="driftrblack" width={75} height={50} />
-                  <div className="text-center">Pune</div>
-                </li>
-                <li className="flex flex-col items-center">
-                  <Logo variant="mototripblack" width={100} height={100} />
-                  <div className="text-center">Goa</div>
-                </li>
-              </ul>
-              <ul className="pl-4 mt-8 list-disc">
-                <li className="mb-2">
-                  Our Locations are the go-to places for recreational &
-                  professional Off-road activities.
-                </li>
-                <li className="mb-2">
-                  We are experienced in track curating & building for Adventure,
-                  Motocross, 4X4 & Flat Tracks.
-                </li>
-                <li className="mb-2">
-                  Ready to roll Flat Track Training Systems.
-                </li>
-                <li className="mb-2">
-                  Our Facilities are Equipped with curated tracks & sufficient
-                  infrastructure to afford bike Maintenance & safe storage.
-                </li>
-                <li className="mb-2">
-                  In-house F&B facilities for a comfortable experience
-                </li>
-                <li className="mb-2">
-                  Well-maintained academies with camping, dorm & bio facilities.
-                </li>
-                <li className="mb-2">
-                  Popular & Ever Growing Social Media presence in the segment.
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </InfoLayout>
-  );
-}
-
-const TeamMember: React.FC<TeamMemberProps> = ({
-  name,
-  position,
-  location,
-  description,
-  instalink,
-  image,
-}) => {
-  return (
     <>
-      <div className="mb-2 text-center">
-        <Image
-          src={image}
-          alt={name}
-          width={160}
-          height={160}
-          className="w-40 h-40 rounded-full mx-auto border-4 border-black/33 img-fluid relative z-10"
-        />
-      </div>
-      <div className="p-4 bg-white rounded-lg text-black relative">
-        <h3 className="uppercase text-lg font-bold">{name}</h3>
-        <p className="mb-1 text-base text-gray-700 font-medium leading-relaxed">
-          {position}
-        </p>
-        <p className="mb-1 text-base text-gray-700 font-medium leading-relaxed">
-          {location}
-        </p>
-        <p className="mb-1 text-base text-gray-700 font-medium leading-relaxed">
-          {description}
-        </p>
-        <a
-          href={instalink}
-          target="_blank"
-          rel="noreferrer noopener"
-          className="text-pink-600 text-xl text-center w-full flex justify-center items-center mt-4"
-        >
-          <Instagram />
-        </a>
-      </div>
+      <PageIntro
+        title="Our story"
+        lede="Structured off-road training, built by racers and adopted by the motorcycle brands they ride for."
+        image={{
+          src: "/images/general/para1.jpg",
+          alt: "A row of BMW GS bikes lined up before a clinic",
+        }}
+      />
+
+      <section
+        aria-labelledby="about-heading"
+        className="wrap py-12 text-ink lg:py-20"
+      >
+        <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] lg:gap-16">
+          <h2 id="about-heading" className="display-2 lg:sticky lg:top-24">
+            What we do
+          </h2>
+          <div className="mt-8 max-w-2xl space-y-6 text-lg leading-relaxed lg:mt-0">
+            <p>
+              Offroad Academies runs training centres for off-road motorcycle
+              riding. We coach riders at every level, from a first day on dirt
+              to race preparation, and we run programmes for motorcycle brands
+              that want their customers to ride better and further.
+            </p>
+            <p>
+              Each centre is built around its own track. Clinics are structured
+              rather than open riding, so skills are learned in an order that
+              sticks, and a trainer watches every rider.
+            </p>
+            <p className="border-l-2 border-signal pl-5 text-gravel">
+              The aim is simple: give riders the technique and the confidence
+              to handle demanding terrain, and grow a community of capable
+              riders across India.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        aria-labelledby="trainers-heading"
+        className="wrap py-12 text-ink lg:py-20"
+      >
+        <div className="grid gap-5 lg:grid-cols-[1.5fr_1fr] lg:items-end lg:gap-16">
+          <h2 id="trainers-heading" className="display-2">
+            The trainers
+          </h2>
+          <p className="lede">
+            Racers, mechanics and coaches. Every clinic is run by one of them.
+          </p>
+        </div>
+
+        <ul className="mt-10 divide-y divide-ink/10 border-y border-ink/10 lg:mt-14">
+          {peopleData.map((person) => (
+            <li
+              key={person.name}
+              className="grid gap-5 py-8 md:grid-cols-[minmax(0,200px)_minmax(0,1fr)] md:gap-10 lg:py-10"
+            >
+              <div className="relative aspect-square w-40 overflow-hidden rounded-xl bg-bone md:w-full">
+                <Image
+                  src={person.image}
+                  alt={person.name}
+                  fill
+                  sizes="(min-width: 768px) 200px, 160px"
+                  className="object-cover"
+                />
+              </div>
+              <div className="max-w-2xl">
+                <p className="eyebrow">
+                  {person.position} · {person.location}
+                </p>
+                <h3 className="display-3 mt-2">{person.name}</h3>
+                <p className="mt-4 leading-relaxed text-gravel">
+                  {person.description}
+                </p>
+                <a
+                  href={person.instalink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={`${linkClass} mt-5 inline-flex items-center gap-2 text-sm font-semibold`}
+                >
+                  <Instagram width={18} height={18} aria-hidden="true" />
+                  Instagram
+                  <ArrowUpRight size={14} aria-hidden="true" />
+                </a>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section
+        aria-labelledby="sites-heading"
+        className="wrap py-12 pb-20 text-ink lg:py-20 lg:pb-28"
+      >
+        <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] lg:gap-16">
+          <div className="lg:sticky lg:top-24 lg:self-start">
+            <h2 id="sites-heading" className="display-2">
+              The sites
+            </h2>
+            <p className="lede mt-5">
+              Two academies on one site at Andra Dam Road, Rajpuri, outside
+              Pune.
+            </p>
+          </div>
+
+          <div className="mt-8 lg:mt-0">
+            <ul className="grid gap-4 sm:grid-cols-2">
+              {academyLinks.map((academy) => (
+                <li key={academy.href}>
+                  <a
+                    href={academy.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group flex h-full flex-col justify-between gap-6 rounded-2xl bg-bone p-6 ring-1 ring-ink/10 transition-colors hover:ring-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal"
+                  >
+                    <Logo
+                      variant={academy.logo}
+                      width={140}
+                      height={48}
+                      className="h-10 w-auto self-start"
+                    />
+                    <span>
+                      <span className="display-3 block text-2xl sm:text-3xl">
+                        {academy.name}
+                      </span>
+                      <span className="mt-2 flex items-center justify-between text-sm text-gravel">
+                        {academy.discipline}
+                        <ArrowUpRight
+                          size={16}
+                          aria-hidden="true"
+                          className="transition-colors group-hover:text-signal"
+                        />
+                      </span>
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+
+            <h3 className="eyebrow mt-12">On site</h3>
+            <ul className="mt-4 divide-y divide-ink/10 border-y border-ink/10">
+              {facilities.map((item) => (
+                <li key={item} className="flex items-start gap-3 py-3">
+                  <span
+                    aria-hidden="true"
+                    className="mt-[0.5em] size-1.5 shrink-0 rounded-full bg-signal"
+                  />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
     </>
   );
-};
+}

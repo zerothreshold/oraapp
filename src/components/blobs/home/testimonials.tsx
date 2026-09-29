@@ -106,11 +106,11 @@ const Testimonials = () => {
       <div className="mx-auto grid max-w-[1400px] gap-6 px-5 sm:px-8 lg:grid-cols-[1.5fr_1fr] lg:items-end lg:gap-16">
         <h2
           id="testimonials-heading"
-          className="text-4xl leading-[0.95] font-bold tracking-tight text-balance sm:text-5xl lg:text-6xl 2xl:text-7xl"
+          className="display-2"
         >
           Don&apos;t take our word for it.
         </h2>
-        <p className="max-w-md text-base leading-relaxed text-gravel sm:text-lg">
+        <p className="lede">
           Over 10,000 riders have trained with us. These are a few of them, on
           video, in their own words.
         </p>

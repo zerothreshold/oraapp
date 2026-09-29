@@ -1,33 +1,24 @@
-import Image from "next/image";
+import PageIntro from "./page-intro";
 
+const defaultImage = {
+  src: "/images/general/flattrack2.jpg",
+  alt: "Two riders side by side on the flat track",
+};
+
+// Used by the legal pages, which still pass a banner strip and a skew flag.
+// Both are ignored so every inner page opens with the same photo band.
 const InfoLayout = ({
   children,
-  imageStr,
   title,
-  skewed = true,
 }: {
   children: React.ReactNode;
-  imageStr: string;
+  imageStr?: string;
   title: string;
   skewed?: boolean;
 }) => {
   return (
-    <div>
-      <div className="relative bg-[#f20a51]">
-        <Image
-          src={imageStr}
-          width={1920}
-          height={1080}
-          alt=""
-          className="img-fluid w-full min-h-[250px] object-cover"
-        />
-        <h2 className="absolute inset-0 flex items-center justify-center text-white text-center text-4xl font-bold">
-          {title}
-        </h2>
-        {skewed && (
-          <div className="absolute bottom-0 left-0 right-0 h-20 bg-white -skew-y-2 transform-gpu z-10 -mb-10 transform-origin-top-left" />
-        )}
-      </div>
+    <div className="text-ink">
+      <PageIntro title={title} image={defaultImage} />
       <main>{children}</main>
     </div>
   );
