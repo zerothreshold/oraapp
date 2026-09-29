@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Offroad Academies
 
-## Getting Started
+Marketing site for Offroad Academies, which runs off-road motorcycle training on Andra Dam Road outside Pune. It covers adventure clinics at ProDirt Adventure and flat track coaching at the TVS Drift-R School.
 
-First, run the development server:
+Live at [offroadacademies.com](https://offroadacademies.com).
+
+## Stack
+
+Next.js 16 (App Router), React 19, Tailwind CSS 4, and Radix UI primitives with shadcn-style components. Fonts are Barlow and Barlow Condensed through `next/font`.
+
+## Run it
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
+pnpm dev        # http://localhost:3000
+pnpm lint
+pnpm build && pnpm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Where things live
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `src/app` holds the routes: home, our story, events, contact, and the legal pages.
+- `src/components` holds the blocks, layouts, and `ui` primitives.
+- `src/data/site.ts` holds the site name, contact details, socials, and page titles. Metadata, the sitemap, and structured data all read from it, so edit it there.
+- `public` holds images and videos.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Targets
 
-## Learn More
+The site is built for mobile first, checked at 720p, 1080p, and 2K screens.
 
-To learn more about Next.js, take a look at the following resources:
+## For AI agents
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+See [AGENTS.md](./AGENTS.md).
