@@ -1,5 +1,3 @@
-import { locationsData } from "./locationsdata";
-
 export const whatWeDo = [
   {
     title: "Learn the Fundamentals",
@@ -40,9 +38,10 @@ export const homeLocations = [
     logo: "prodirtblack" as const,
     img: "/images/general/trials.jpeg",
     imgAlt: "Adventure bike jumping a log at ProDirt Adventure",
-    href: locationsData.prodirtadventure.href,
-    address: locationsData.prodirtadventure.address,
-    description: locationsData.prodirtadventure.description,
+    href: "https://prodirtadventure.offroadacademies.com/",
+    address: "Pro Dirt Adventure, Andra Dam Rd, Rajpuri, Maharashtra 412106",
+    description:
+      "ProDirt Adventure isn't just a riding destination; it's your launchpad for off-road mastery. We are passionate about empowering riders across Maharashtra with the skills and confidence to conquer any terrain. Our commitment to off-road education shines through our diverse training programs for both two-wheelers and four-wheelers.",
   },
   {
     name: "TVS Drift-R School",
@@ -50,9 +49,10 @@ export const homeLocations = [
     logo: "driftrblack" as const,
     img: "/images/general/driftrbanner.jpg",
     imgAlt: "Rider leaning through a flat track corner at golden hour",
-    href: locationsData.driftr_pune.href,
-    address: locationsData.driftr_pune.address,
-    description: locationsData.driftr_pune.description,
+    href: "https://tvs-driftr.offroadacademies.com/",
+    address: "TVS driftR Adventure, Andra Dam Rd, Rajpuri, Maharashtra 412106",
+    description:
+      "Flat Tracking, is a fun, emerging, and accessible form of motorcycling that is among the fastest-growing motorsports in the world. TVS Motor Company is launching the first Drift R School at ProDirt Adventure, Pune This school aims to introduce/help/assist in understanding the nuances of this sport by creating a platform where all our TVS Ronin and other customers get to interact and learn drifting under the guidance of highly skilled trainers in a safe and controlled environment.",
   },
 ];
 

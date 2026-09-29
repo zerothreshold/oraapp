@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import { Barlow, Barlow_Condensed } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/blocks/header";
-import { Toaster } from "@/components/ui/toaster";
 import Footer from "@/components/blocks/footer";
 
 const barlow = Barlow({
@@ -54,7 +53,6 @@ export default function RootLayout({
           <Header />
         </div>
         <main className="min-h-screen pt-16">{children}</main>
-        <Toaster />
         <Footer />
       </body>
     </html>
